@@ -76,6 +76,7 @@ body {
 }
 
 .container {
+  min-width: 980px;
   position: relative;
   height: 100vh;
   width: 100vw;
