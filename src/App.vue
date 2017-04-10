@@ -1,15 +1,13 @@
 <template>
   <div id="app">
-    <div class="container">
-      <side-nav></side-nav>
-      <logger-list></logger-list>
-    </div>
+    <side-nav></side-nav>
+    <panel></panel>
   </div>
 </template>
 
 <script>
-import LoggerList from './components/LoggerList'
 import SideNav from './components/SideNav'
+import Panel from './components/Panel'
 import store from './store'
 import { mapState, mapMutations } from 'vuex'
 
@@ -17,8 +15,8 @@ export default {
   name: 'app',
   store,
   components: {
-    LoggerList,
-    SideNav
+    SideNav,
+    Panel
   },
   data () {
     return {
@@ -58,6 +56,10 @@ export default {
 </script>
 
 <style>
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
 body {
   margin: 0;
   padding: 0;
@@ -75,13 +77,9 @@ body {
   filter: blur(10px);
 }
 
-.container {
-  min-width: 980px;
-  position: relative;
+#app {
   height: 100vh;
   width: 100vw;
-  box-sizing: border-box;
-  padding: 1.3vw;
   display: flex;
 }
 </style>

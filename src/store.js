@@ -10,9 +10,13 @@ export default new Vuex.Store({
     currentPage: '',
     latestLine: [],
     latestCount: 10,
-    unreadCount: {}
+    unreadCount: {},
+    currentView: null
   },
   mutations: {
+    setCurrentView (state, payload) {
+      state.currentView = payload.view
+    },
     setSocket (state, payload) {
       state.socket = payload.socket
     },
